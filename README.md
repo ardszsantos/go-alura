@@ -1,4 +1,5 @@
 
+
 # Go Studies - Alura
 
 ### Repo made for my Golang studies, each topic will be separated into branches.
@@ -10,9 +11,10 @@
 
 	Structure:
 	
-|main|Conditionals|
-|--|      --|
-|hello.go| conditionFlux.go  |
+| main     | helloWrld       | conditionals       | 
+|---------------|-------------------|--------------------
+| README.md  |hello.go |             conditions.go |        
+
 
 
     

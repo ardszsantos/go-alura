@@ -1,3 +1,18 @@
-# go-alura
 
-### Repo made in order to save all my go studies, ill separate each topic in branches
+# Go Studies - Alura
+
+### Repo made for my Golang studies, each topic will be separated into branches.
+
+	
+
+
+![gopher, the goat](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRo6TtYrQfi3Ein3o9ikg-wcbbGSGNMx9H0JMr2XW6l9IziYrpaSVnilc9Zbv0bcuMxmm8&usqp=CAU)
+
+	Structure:
+	
+|main|Conditionals|
+|--|      --|
+|hello.go| conditionFlux.go  |
+
+
+    

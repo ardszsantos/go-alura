@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	fmt.Println("read the readme")
+	fmt.Println("Hello World")
 }

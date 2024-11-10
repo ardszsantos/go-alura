@@ -9,7 +9,6 @@ import (
 func main() {
 	exibeIntroducao()
 	for {
-
 		exibeMenu()
 
 		comando := leComando()
@@ -19,6 +18,7 @@ func main() {
 			iniciarMonitoramento()
 		case 2:
 			fmt.Println("Exibindo Logs....")
+			exibeNomes()
 		case 3:
 			fmt.Println("Saindo do programa")
 			os.Exit(0)
@@ -27,7 +27,6 @@ func main() {
 			fmt.Println("Não conheço este comando")
 			os.Exit(-1)
 		}
-
 	}
 }
 
@@ -53,7 +52,16 @@ func leComando() int {
 }
 
 func iniciarMonitoramento() {
+
+	var sites [4]string
+
+	sites[0] = "https://www.alura.com.br"
+	sites[1] = "https://www.alura.com.br"
+	sites[2] = "https://www.alura.com.br"
+	sites[3] = "https://www.caelum.com.br"
+
 	fmt.Println("Monitorando...")
+
 	site := "https://www.alura.com.br"
 	resp, _ := http.Get(site)
 
@@ -62,4 +70,9 @@ func iniciarMonitoramento() {
 	} else {
 		fmt.Println("Site: ", site, "está com um problema. Status Code:", resp.StatusCode)
 	}
+}
+
+func exibeNomes() {
+	nomes := []string{"Douglas", "Daniel", "Bernardo"}
+	fmt.Println(nomes[0])
 }

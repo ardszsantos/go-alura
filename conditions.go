@@ -13,7 +13,7 @@ func main() {
 
 	switch comando {
 	case 1:
-		fmt.Println("Monitorando...")
+		iniciarMonitoramento()
 	case 2:
 		fmt.Println("Exibindo Logs....")
 	case 3:
@@ -45,4 +45,10 @@ func leComando() int {
 	fmt.Println("O comando escolhido foi", comandoLido)
 
 	return comandoLido
+}
+
+
+func iniciarMonitoramento() {
+	fmt.Println("Monitorando...")
+
 }

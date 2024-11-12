@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"io/ioutil"
 	"net/http"
 	"os"
 	"time"
@@ -11,6 +12,7 @@ const monitoramentos = 3
 const delay = 5
 
 func main() {
+	readFileSites()
 	exibeIntroducao()
 	for {
 
@@ -60,7 +62,7 @@ func leComando() int {
 func iniciarMonitoramento() {
 	fmt.Println("Monitorando...")
 
-	sites := []string{"https://dsbl10-frontend.vercel.app/", "https://www.alura.com.br", "https://www.caelum.com.br"}
+	sites := readFileSites()
 
 	for i := 0; i < monitoramentos; i++ {
 		for i, site := range sites {
@@ -78,11 +80,30 @@ func iniciarMonitoramento() {
 
 func testaSite(site string) {
 
-	resp, _ := http.Get(site)
+	resp, err := http.Get(site)
+
+	if err != nil {
+		fmt.Println("Ocorreu um erro:", err)
+	}
 
 	if resp.StatusCode == 200 {
 		fmt.Println("Site: ", site, "foi carregado corretamente")
 	} else {
 		fmt.Println("Site: ", site, "está com um problema. Status Code:", resp.StatusCode)
 	}
+}
+
+func readFileSites() []string {
+	var sites []string
+
+	//file, err := os.Open("sites.txt")
+	file, err := ioutil.ReadFile("sites.txt")
+
+	if err != nil {
+		fmt.Println("Ocorreu um erro: ", err)
+	}
+
+	fmt.Println(file)
+
+	return sites
 }

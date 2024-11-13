@@ -111,11 +111,10 @@ func readFileSites() []string {
 
 		sites = append(sites, linha)
 
-		fmt.Println(linha)
-
 		if err == io.EOF {
 			break
 		}
 	}
+
 	return sites
 }

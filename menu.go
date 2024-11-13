@@ -109,6 +109,8 @@ func readFileSites() []string {
 		linha, err := leitor.ReadString('\n')
 		linha = strings.TrimSpace(linha)
 
+		sites = append(sites, linha)
+
 		fmt.Println(linha)
 
 		if err == io.EOF {

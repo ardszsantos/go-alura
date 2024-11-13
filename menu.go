@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"io"
 	"net/http"
 	"os"
 	"time"
@@ -103,13 +104,15 @@ func readFileSites() []string {
 
 	leitor := bufio.NewReader(arquivo)
 
-	linha, err := leitor.ReadString('\n')
+	for {
+		linha, err := leitor.ReadString('\n')
 
-	if err != nil {
-		fmt.Println("Ocorreu um erro: ", err)
+		fmt.Println(linha)
+
+		if err == io.EOF {
+			break
+
+		}
 	}
-
-	fmt.Println(linha)
-
 	return sites
 }

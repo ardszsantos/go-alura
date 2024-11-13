@@ -103,7 +103,7 @@ func readFileSites() []string {
 		fmt.Println("Ocorreu um erro: ", err)
 	}
 
-	fmt.Println(file)
+	fmt.Println(string(file))
 
 	return sites
 }

@@ -116,5 +116,7 @@ func readFileSites() []string {
 		}
 	}
 
+	arquivo.Close()
+
 	return sites
 }

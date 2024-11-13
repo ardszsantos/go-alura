@@ -6,6 +6,7 @@ import (
 	"io"
 	"net/http"
 	"os"
+	"strings"
 	"time"
 )
 
@@ -106,12 +107,12 @@ func readFileSites() []string {
 
 	for {
 		linha, err := leitor.ReadString('\n')
+		linha = strings.TrimSpace(linha)
 
 		fmt.Println(linha)
 
 		if err == io.EOF {
 			break
-
 		}
 	}
 	return sites

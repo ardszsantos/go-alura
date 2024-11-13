@@ -1,3 +1,5 @@
 https://www.alura.com.br
 https://www.google.com
 https://www.caelum.com.br
+https://github.com/suporte-de-domingo/SD.Code-Trouble.Frontend/pull/6
+https://dsbl10-frontend.vercel.app/
